@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Atendimentos SAMU</h1>
+    
+        <!-- Container Clínicos -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="alert alert-info" role="alert" id="clinicos-container">
+                    <a href="#" id="clinicos-container"></a>
+                    
+                   <button class="btn btn-outline-primary" onclick="toggleVisibility('clinicos')"><h2>Atendimentos Clínicos</h2></button>
+                </div>
+    
+                <!-- Container Vermelho - Emergência Clínica -->
+                <div class="alert alert-primary" role="alert" id="clinicos-emergencia" style="display: none;">
+                    <h3>Motivos</h3>
+                    <ul id="causas-clinicas-vermelhas">
+                        <li onclick="renderizarQueixaClinica('clinicos-emergencia', 'PCR')">Parada cardiorrespiratória</li>
+                        <li>Rebaixamento do nível de consciência</li>
+                        <li>Dor precordial</li>
+                        <li>Hemiparesia</li>
+                        <li>Afasia</li>
+                        <li>Síncope</li>
+                        <li>Crise convulsiva</li>
+                        <li>Dispneia</li>
+                        <li>Febre</li>
+                        <li>Hipoatividade</li>
+                        <li>Dor abdominal</li>
+                    </ul>
+                    <!-- Adicione informações específicas aqui -->
+                </div>
+    
+               
+            </div>
+        </div>
+    
+        <!-- Repita a estrutura para Causas Externas, Psiquiátricos e Obstétricos -->
+    
+        <!-- Container Causas Externas -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="alert alert-info" role="alert">
+                    <a href="#" id="externas-container"></a>
+                    
+                    
+                    <button class="btn btn-outline-primary" onclick="toggleVisibility('externas')"><h2>Causas Externas</h2></button>
+               
+                    <!-- Adicione informações específicas aqui -->
+                </div>
+    
+                <!-- Container Vermelho - Emergência Causas Externas -->
+                <div class="alert alert-primary" role="alert" id="externas-emergencia" style="display: none;">
+                    <h3>Motivos</h3>
+                    <ul id="causas-externas-vermelhas">
+                        <li>Capotamento</li>
+                        <li>Envenenamento</li>
+                        <li>PAF/FAB</li>
+                        <li>Colisão</li>
+                        <li>Queda de altura</li>
+                        <li>Agressão</li>
+                        <li>Corte</li>
+                        <li>Queda de própria altura</li>
+                        <li>Queimadura</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <!-- Container Obstétricos -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+
+                <a href="#" id="Obstétricos-container"></a>
+                
+                <button class="btn btn-outline-primary" onclick="toggleVisibility('Obstétricos')"><h2>Atendimentos Obstétricos</h2></button>
+               
+                <!-- Adicione informações específicas aqui -->
+            </div>
+
+            <!-- Container Vermelho - Emergência Clínica -->
+            <div class="alert alert-primary" role="alert" id="Obstétricos-emergencia" style="display: none;">
+                <h3>Motivos</h3>
+                <ul id="causas-obstetricas-vermelhas">
+                    <li>Parto consumado</li>
+                    <li>Eclâmpsia</li>
+                    <li>Prolapso de cordão umbilical</li>
+                    <li>Trabalho de parto</li>
+                    <li>Dor pélvica</li>
+                    <li>Sangramento vaginal</li>
+                    <li>Disúria</li>
+                    <li>Hiperêmese gravídica</li>
+                    <li>Abortamento</li>
+                    
+                </ul>
+                <!-- Adicione informações específicas aqui -->
+            </div>
+
+        </div>
+    </div>
+    <!-- Container Psiquiatria -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+
+                <a href="#" id="Psiquiátricos-container"></a>
+                
+                <button class="btn btn-outline-primary" onclick="toggleVisibility('Psiquiátricos')"><h2>Atendimentos Psiquiátricos</h2></button>
+               
+                <!-- Adicione informações específicas aqui -->
+            </div>
+
+            <!-- Container Vermelho - Emergência Clínica -->
+            <div class="alert alert-primary" role="alert" id="Psiquiátricos-emergencia" style="display: none;">
+                <h3>Motivos</h3>
+                <ul id="causas-psiquiatricas-vermelhas">
+                    <li>Ingesta de medicações</li>
+                    <li>Auto-mutilação</li>
+                    <li>Surto psicótico</li>
+                    <li>Hétero-agressividade</li>
+                    <li>Mania</li>
+                    <li>Alucinação</li>
+                    <li>Delírios</li>
+                    <li>Humor deprimido</li>
+                    
+                    
+                </ul>
+                <!-- Adicione informações específicas aqui -->
+            </div>
+
+            
+        </div>
+    </div>
+
+    <!-- Container Pediátricos -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+
+                <a href="#" id="Pediatricos-container"></a>
+               
+                <button class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="toggleVisibility('Pediatricos')" > <h2>Atendimentos Pediátricos</h2></button>
+               
+                <!-- Adicione informações específicas aqui -->
+            </div>
+
+            <!-- Container Vermelho - Emergência Clínica -->
+            <div class="alert alert-primary" role="alert" id="Pediatricos-emergencia" style="display: none;">
+                <h3>Motivos</h3>
+                <ul id="causas-pediatricas-vermelhas">
+                    <li>Rebaixamento do nível de consciência</li>
+                    <li>Parada cardiorrespiratória</li>
+                    <li>IRpA</li>
+                    <li>Crise asmática</li>
+                    <li>Crise convulsiva</li>
+                    <li>Desidratação aguda</li>
+                    <li>Febre</li>
+                    <li>Diarreia</li>
+                    <li>Dor abdominal</li>
+                    
+                </ul>
+                <!-- Adicione informações específicas aqui -->
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script>
+// Banco de dados de queixas/motivos
+        const queixas = {
+            PCR : {vermelha : ["Não respira","Não tem rigidez","Tempo conhecido"],amarela:["Na verdade respira","Retomou consciência","Não foi possível esclarecer a história"],verde:["Raras exceções"],vermelhos:["Orientar compressões","Chamar por ajuda e pedir um DEA","Não interromper até a chegada da equipe"]}
+            }
+ // Função para rolagem de tela e abertura da lista de possibilidades
+        function toggleVisibility(category) {
+            $(`#${category}-emergencia`).toggle();
+            $(`#${category}-urgencia`).toggle();
+            $(`#${category}-pouca-urgencia`).toggle();
+            $('html, body').animate({
+            scrollTop: $(`#${category}-container`).offset().top
+        }, 100);
+        }
+ 
+ // Renderizar as queixas clínicas
+        function renderizarQueixaClinica(containerId, queixa) {
+                const container = $(`#${containerId}`);
+                container.empty();
+                container.append(`<h1>${queixa}</h1>`)
+
+                var containerVermelho = $(`<div class="alert alert-danger" role="alert" id="vermelhos-emergencia">
+                <h3>Vermelho</h3>
+                <ul id="lista-vermelhas">
+                </ul>
+            </div>`);
+                const ul = containerVermelho.find('ul');
+                queixas[queixa]['vermelha'].forEach(function(valor) {
+                    ul.append(`<li>${valor}</li>`);
+                });
+                container.append(containerVermelho);
+
+                var containerAmarelo = $(`<div class="alert alert-warning" role="alert" id="amarelos-emergencia">
+                <h3>Amarelo</h3>
+                <ul id="lista-amarelas">
+                </ul>
+            </div>`);
+                const ula = containerAmarelo.find('ul');
+                queixas[queixa]['amarela'].forEach(function(valor) {
+                    ula.append(`<li>${valor}</li>`);
+                });
+                container.append(containerAmarelo);
+
+                var containerVerde = $(`<div class="alert alert-success" role="alert" id="verdes-emergencia">
+                <h3>Verde</h3>
+                <ul id="lista-verdes">
+                </ul>
+            </div>`);
+                const ulb = containerVerde.find('ul');
+                queixas[queixa]['verde'].forEach(function(valor) {
+                    ulb.append(`<li>${valor}</li>`);
+                });
+                container.append(containerVerde);
+            
+                const listaContainer = container.find('ul');
+                 // Coloca orientações no data-content do popover
+                
+
+                listaContainer.append(`<button type="button" class="btn btn-light" data-toggle="popover" data-placement="" title="X" data-content="" onclick="atualizarPopoverContent(this)">Orientações</button>`);
+               
+                // Inicializa o popover
+                $('[data-toggle="popover"]').popover();
+
+                $('html, body').animate({
+                scrollTop: $(container).offset().top
+                }, 250);
+                
+
+            }
+            function atualizarPopoverContent(button) {
+                //Identifica a cor da situação em questão
+                var listaOrientacoes = ' ';
+                const tema = $(button).parents('.alert').attr('id').split('-')[0]; // Extrai o tema (vermelhas, amarelas, etc.)
+                // Função que você deve implementar para obter as informações específicas
+                //Armazena numa variável o tema da queixa para busca no objeto:
+                var elementoQueixa = $(button).closest('.alert-primary').find('h1').text()
+                //Busca dentro do objeto sabendo cor e tema da queixa, quais seriam as orientações
+                console.log(tema)
+                console.log(elementoQueixa)
+                queixas[elementoQueixa][tema.toString()].forEach(function(orientacoes) { 
+                    listaOrientacoes += " " + JSON.stringify(orientacoes).replace(/["]/g, '') + ';'
+                })
+                
+                listaOrientacoes += ' '
+                // Atualiza o conteúdo do popover
+                console.log(listaOrientacoes)
+                $(button).attr('data-bs-original-title', listaOrientacoes);
+                
+                }
+
+            
+            
+    </script>
+    <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="Aqui sairão orientações">Orientações ao paciente</a>
+    
+</body>
+</html>
